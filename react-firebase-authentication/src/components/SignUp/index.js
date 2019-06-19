@@ -71,6 +71,7 @@ class SignUpFormBase extends Component {
                     onChange={this.onChange}
                     type='text'
                     placeholder='Full Name'
+                    autoComplete='username'
                 />
                 <input
                 name='email'
@@ -78,6 +79,7 @@ class SignUpFormBase extends Component {
                 onChange={this.onChange}
                 type='text'
                 placeholder='Email Addres'
+                autoComplete='email'
                 />
                 <input
                 name='passwordOne'
@@ -85,6 +87,7 @@ class SignUpFormBase extends Component {
                 onChange={this.onChange}
                 type='password'
                 placeholder='Password'
+                autoComplete='current-password'
                 />
                 <input
                 name='passwordTwo'
@@ -92,6 +95,7 @@ class SignUpFormBase extends Component {
                 onChange={this.onChange}
                 type='password'
                 placeholder='Confirm Password'
+                autoComplete='new-password'
                 />
                 <button disabled={isInvalid} type='submit'>
                     Sign Up

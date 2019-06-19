@@ -15,7 +15,6 @@ const Navigation = () => (
             <li>
             <Link to={ROUTES.HOME}>Home</Link>
             </li>
-            Firebase’s Authentication API 40
             <li>
             <Link to={ROUTES.ACCOUNT}>Account</Link>
             </li>
