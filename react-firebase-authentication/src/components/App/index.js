@@ -14,22 +14,15 @@ import AccountPage from '../Account';
 import AdminPage from '../Admin';
 
 import * as ROUTES from '../../constants/routes';
+import { withAuthentication } from '../Session';
 
-class App extends Component {
-    constructor(props){
-        super(props);
-
-        this.state = {
-            authUser: null,
-        };
-    }
-
-    render() {
-        return (
-            <Router>
+const App = () => (
+           <Router>
                 <div>
-                    <Navigation authUser={this.state.authUser} />
-                                    <hr/>
+                    <Navigation />
+                                    
+                     <hr/>
+
                     <Route exact path={ROUTES.LANDING} component={LandingPage} />
                     <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
                     <Route path={ROUTES.SIGN_IN} component={SignInPage} />
@@ -39,8 +32,6 @@ class App extends Component {
                     <Route path={ROUTES.ADMIN} component={AdminPage} />
                 </div>
             </Router>
-        )
-    }
-}
+);
 
-export default App;
+export default withAuthentication(App);

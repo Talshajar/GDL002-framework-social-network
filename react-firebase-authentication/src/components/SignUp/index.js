@@ -30,7 +30,7 @@ class SignUpFormBase extends Component {
     }
 
     onSubmit = event => {
-        const { username, email, passwordOne } = this.state;
+        const { email, passwordOne } = this.state;
         this.props.firebase
         .doCreateUserWithEmailAndPassword(email, passwordOne)
         .then(authUser => {
@@ -64,6 +64,8 @@ class SignUpFormBase extends Component {
             username === '';
 
         return (
+        <div>
+          <h1>Hello.</h1>
             <form onSubmit={this.onSubmit}>
                 <input
                     name= 'username'
@@ -74,28 +76,28 @@ class SignUpFormBase extends Component {
                     autoComplete='username'
                 />
                 <input
-                name='email'
-                value={email}
-                onChange={this.onChange}
-                type='text'
-                placeholder='Email Addres'
-                autoComplete='email'
+                    name='email'
+                    value={email}
+                    onChange={this.onChange}
+                    type='text'
+                    placeholder='Email Addres'
+                    autoComplete='email'
                 />
                 <input
-                name='passwordOne'
-                value={passwordOne}
-                onChange={this.onChange}
-                type='password'
-                placeholder='Password'
-                autoComplete='current-password'
+                    name='passwordOne'
+                    value={passwordOne}
+                    onChange={this.onChange}
+                    type='password'
+                    placeholder='Password'
+                    autoComplete='current-password'
                 />
                 <input
-                name='passwordTwo'
-                value={passwordTwo}
-                onChange={this.onChange}
-                type='password'
-                placeholder='Confirm Password'
-                autoComplete='new-password'
+                    name='passwordTwo'
+                    value={passwordTwo}
+                    onChange={this.onChange}
+                    type='password'
+                    placeholder='Confirm Password'
+                    autoComplete='new-password'
                 />
                 <button disabled={isInvalid} type='submit'>
                     Sign Up
@@ -103,6 +105,7 @@ class SignUpFormBase extends Component {
 
                 {error && <p>{error.message}</p>}
             </form>
+        </div>
         )
     }
 }

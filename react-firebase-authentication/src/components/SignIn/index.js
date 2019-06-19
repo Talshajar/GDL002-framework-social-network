@@ -45,28 +45,31 @@ class SignInFormBase extends Component {
         const { email, password, error } = this.state;
         const isInvalid = password === '' || email === '';
         return (
+        <div>
+                 <h1>Hello.</h1>
             <form onSubmit={this.onSubmit}>
                 <input
-                name="email"
-                value={email}
-                onChange={this.onChange}
-                type="text"
-                placeholder="Email Address"
-                autoComplete="email"
-                />
+                    name="email"
+                    value={email}
+                    onChange={this.onChange}
+                    type="text"
+                    placeholder="Email Address"
+                    autoComplete="email"
+                    />
                 <input
-                name="password"
-                value={password}
-                onChange={this.onChange}
-                type="password"
-                placeholder="Password"
-                autoComplete="current-password"
-                />
+                    name="password"
+                    value={password}
+                    onChange={this.onChange}
+                    type="password"
+                    placeholder="Password"
+                    autoComplete="current-password"
+                    />
                     <button disabled={isInvalid} type="submit">
                     Sign In
                     </button>
                     {error && <p>{error.message}</p>}
             </form>
+        </div>
         );
     }
 }
