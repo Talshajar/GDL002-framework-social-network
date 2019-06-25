@@ -2,16 +2,21 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
+
+
 const PasswordForgetPage = () => (
-<div>
-<h1>PasswordForget</h1>
-<PasswordForgetForm />
-</div>
-);
-const INITIAL_STATE = {
-email: '',
-error: null,
-};
+    <div>
+    <h1>PasswordForget</h1>
+    <PasswordForgetForm />
+    </div>
+    );
+
+    const INITIAL_STATE = {
+    email: '',
+    error: null,
+    };
+
+    
 class PasswordForgetFormBase extends Component {
 constructor(props) {
 super(props);
@@ -44,6 +49,7 @@ value={this.state.email}
 onChange={this.onChange}
 type="text"
 placeholder="Email Address"
+autoComplete="confirm-new-password"
 />
 <button disabled={isInvalid} type="submit">
 Reset My Password

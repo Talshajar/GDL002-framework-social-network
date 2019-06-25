@@ -1,0 +1,233 @@
+.side-view ul {
+    list-style: none;
+    text-align: right;
+    padding-left: 0px;
+    width: 100%;
+  }
+  
+  .side-view ul li {
+    height: 51px;
+    line-height: 51px;
+    border-bottom: 1px solid #d2d1d1;
+    box-sizing: border-box;
+  }
+  
+  .side-view ul li a {
+    speak: none;
+    width: 100%;
+    height: 100%;
+    font-size: 1.4em;
+    padding: 1px;
+    padding-right: 10px;
+    color: #72739f;
+    transition: all 0.4s;
+  }
+  
+  .side-view ul li a:hover{
+    text-decoration:none;
+  }
+  
+  .side-view ul li:hover{
+    border-right: 1px solid #d2d1d1;
+    background:#449d44;
+  }
+  
+  .side-view ul li:hover a{
+    
+    color:white;
+  }
+  
+  .side-view ul li a .front-view {
+    width: 100%;
+    transition: all 0.4s;
+  }
+  
+  .rotate-right .front-view {
+    transform: rotateY( 20deg);
+    transform-origin: center left;
+    width: 120%;
+    margin-left: 20%;
+    transition: all 0.4s;
+  }
+  
+  .rotate-right .side-view {
+    right: 80%;
+    width: 29%;
+    transform: rotateY(-30deg);
+    transform-origin: center right;
+    transition: all 0.4s;
+  }
+  
+  .side-view {
+    background: #DCDCDC;
+    position: absolute;
+    top: 0px;
+    right: 100%;
+    width: 100%;
+    height: 500px;
+    transition: all 0.4s;
+  }
+  
+  .module .body {
+    background: rgba(27, 43, 53, 1);
+  }
+  
+  .instance {
+    padding: 10px 10px;
+    background: #EFEFEF;
+  }
+  
+  .property {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 10px 0px;
+    background: #EFEFEF;
+  }
+  
+  .property {
+    overflow: hidden;
+    height: 40px;
+  }
+  
+  .settings {
+    position: absolute;
+    top: 0px;
+    right: 15px;
+  }
+  
+  .main-info {
+    margin-bottom: 10px;
+    position: relative;
+  }
+  
+  .main-info .title {
+    padding: 0px 10px;
+  }
+  
+  .choise {
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  
+  .choise {
+    color: #449D44;
+    border-right: 1px solid rgba(0, 0, 0, 0.05);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  .cancel {
+    color: #AB0F1E;
+  }
+  
+  .function_title {
+    text-align: center;
+    background: rgb(68, 157, 68);
+    color: white;
+  }
+  
+  .menu,
+  .menu-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background: #f7f7f7;
+    z-index: 10;
+    overflow: hidden;
+    box-shadow: 2px 0 18px rgba(0, 0, 0, 0.26);
+  }
+  
+  .menu li a {
+    display: block;
+    text-indent: -500em;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: #72739f;
+    position: relative;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    transition: background 0.1s ease-in-out;
+  }
+  
+  .menu li a:before {
+    font-family: FontAwesome;
+    speak: none;
+    text-indent: 0em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 1.4em;
+  }
+  
+  .menu li a.search:before {
+    content: "\f002";
+    margin-left: 18px;
+  }
+  
+  .menu li a.archive:before {
+    content: "\f187";
+    margin-left: 18px;
+  }
+  
+  .menu li a.pencil:before {
+    content: "\f040";
+    margin-left: 18px;
+  }
+  
+  .menu li a.contact:before {
+    content: "\f003";
+    margin-left: 18px;
+  }
+  
+  .menu li a.about:before {
+    content: "\f007";
+    margin-left: 18px;
+  }
+  
+  .menu li a.home:before {
+    content: "\f039";
+  }
+  
+  .menu-bar li a:hover,
+  .menu li a:hover,
+  .menu li:first-child a {
+    background: #449d44;
+    color: #fff;
+  }
+  
+  .menu-bar {
+    overflow: hidden;
+    left: 5em;
+    z-index: 5;
+    width: 0;
+    height: 0;
+    transition: all 0.1s ease-in-out;
+  }
+  
+  .menu-bar li a {
+    display: block;
+    height: 4em;
+    line-height: 4em;
+    text-align: center;
+    color: #72739f;
+    text-decoration: none;
+    position: relative;
+    font-family: verdana;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    transition: background 0.1s ease-in-out;
+  }
+  
+  .menu-bar li:first-child a {
+    height: 5em;
+    background: #449d44;
+    color: #fff;
+    line-height: 5
+  }
+  

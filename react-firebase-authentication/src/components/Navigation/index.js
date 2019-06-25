@@ -6,6 +6,8 @@ import * as ROUTES from "../../constants/routes";
 import * as ROLES from '../../constants/roles';
 
 import { AuthUserContext } from "../Session";
+import '../Navigation/navigation.css';
+
 
 const Navigation = () => (
   <div>
@@ -21,15 +23,28 @@ const Navigation = () => (
   </div>
 );
 const NavigationAuth = ({ authUser }) => (
-  <ul>
-    <li>
-      <Link to={ROUTES.LANDING}>Landing</Link>
+
+
+  
+  // <ul class="menu">
+  //   <li ><a href="#" >menu</a></li>
+  //   <li ><a href="#" >search</a></li>
+  //   <li title="pencil"><a href="#" class="pencil">pencil</a></li>
+  //   <li title="about"><a href="#" class="active about">about</a></li>
+  //   <li title="archive"><a href="#" class="archive">archive</a></li>
+  //   <li ><a href="#" class="contact">contact</a></li>
+  // </ul>
+
+  
+  <ul className="menu">
+    <li title="contact">
+      <Link to={ROUTES.LANDING} className="contact">Landing</Link>
     </li>
-    <li>
-      <Link to={ROUTES.HOME}>Home</Link>
+    <li title="home">
+      <Link to={ROUTES.HOME} id="menu-button" className="menu-button home">Home</Link>
     </li>
-    <li>
-      <Link to={ROUTES.ACCOUNT}>Account</Link>
+    <li title="search">
+      <Link to={ROUTES.ACCOUNT} className="search">Account</Link>
     </li>
     {!!authUser.roles[ROLES.ADMIN] && (
       <li>
@@ -40,7 +55,10 @@ const NavigationAuth = ({ authUser }) => (
       <SignOutButton />
     </li>
   </ul>
+  
+
 );
+
 const NavigationNonAuth = () => (
   <ul>
     <li>
@@ -53,3 +71,10 @@ const NavigationNonAuth = () => (
 );
 
 export default Navigation;
+
+
+
+
+
+
+
