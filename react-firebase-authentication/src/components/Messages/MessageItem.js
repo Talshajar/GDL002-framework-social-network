@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../Messages/messages.css';
 
 class MessageItem extends Component {
   constructor(props) {
@@ -38,7 +39,6 @@ class MessageItem extends Component {
             type="text"
             value={editText}
             onChange={this.onChangeEditText}
-            className="inner"
           />
         ) : (
           <span>

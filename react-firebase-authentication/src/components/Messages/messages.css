@@ -16,6 +16,10 @@ body {
     perspective: 40px;
   }
   
+  li  {
+    list-style-type: none;
+  }
+
   #inner {
     width: 20em;
     height: 18em;

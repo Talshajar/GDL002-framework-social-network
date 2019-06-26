@@ -1,4 +1,5 @@
 import React from 'react';
+import '../Messages/messages.css';
 
 import MessageItem from './MessageItem';
 
@@ -8,9 +9,10 @@ const MessageList = ({
   onEditMessage,
   onRemoveMessage,
 }) => (
-  <ul>
+  <ul >
     {messages.map(message => (
       <MessageItem
+        className="inner"
         authUser={authUser}
         key={message.uid}
         message={message}
