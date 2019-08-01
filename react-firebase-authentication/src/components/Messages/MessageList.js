@@ -12,9 +12,8 @@ const MessageList = ({
   <ul >
     {messages.map(message => (
       <MessageItem
-        className="inner"
         authUser={authUser}
-        key={message.uid}
+        key={message.username}
         message={message}
         onEditMessage={onEditMessage}
         onRemoveMessage={onRemoveMessage}

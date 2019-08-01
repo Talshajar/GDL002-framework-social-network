@@ -4,13 +4,16 @@ import { Link, withRouter } from 'react-router-dom';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 import * as ROLES from '../../constants/roles';
-import '../SignUp/signup.css';
+import { SignUpPageStyle }  from '../SignUp/SignUpStyle';
+
 
 const SignUpPage = () => (
+  <SignUpPageStyle>
   <div>
     <h1>SignUp</h1>
     <SignUpForm />
   </div>
+  </SignUpPageStyle>
 );
 
 const INITIAL_STATE = {
@@ -117,7 +120,7 @@ class SignUpFormBase extends Component {
           type="password"
           placeholder="Confirm Password"
         />
-        <label>
+        {/* <label>
           Admin:
           <input
             name="isAdmin"
@@ -125,7 +128,7 @@ class SignUpFormBase extends Component {
             checked={isAdmin}
             onChange={this.onChangeCheckbox}
           />
-        </label>
+        </label> */}
         <button disabled={isInvalid} type="submit">
           Sign Up
         </button>

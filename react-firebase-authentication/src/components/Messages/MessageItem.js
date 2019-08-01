@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import { MDBCard, MDBRow,  MDBCardBody, MDBIcon} from "mdbreact";
 import '../Messages/messages.css';
+
+
 
 class MessageItem extends Component {
   constructor(props) {
@@ -33,42 +36,74 @@ class MessageItem extends Component {
     const { editMode, editText } = this.state;
 
     return (
-      <li className="container">
-        {editMode ? (
-          <input
-            type="text"
-            value={editText}
-            onChange={this.onChangeEditText}
-          />
-        ) : (
-          <span>
-            <strong>{message.userId}</strong> {message.text}
-            {message.editedAt && <span>(Edited)</span>}
-          </span>
-        )}
+      <MDBCard
+      className="my-5 px-5 pt-4"
+      style={{ fontWeight: 300, maxWidth: 600 }}
+    >
+      <MDBCardBody className="py-0">
+        <MDBRow>
+                <li className="post-it">
+                <div className="news">
+                <div className="label">
+                  <img
+                    src="https://mdbootstrap.com/img/Photos/Avatars/img%20(18)-mini.jpg"
+                    alt=""
+                    className="rounded-circle z-depth-1-half"
+                  />
+                </div>
+<div className="excerpt">
+                  <div className="brief">
+                  {editMode ? (
+            <input
+                type="text"
+                value={editText}
+                onChange={this.onChangeEditText}
+            />
+            ) : (
+            <span>
+                <strong>{message.userId } posted in her page </strong><br></br> </span>
+            )}
+                    <div className="date">2 days ago</div>
+                  </div>
+                  <div className="added-text">
+                  {message.text}
+                <br></br> {message.editedAt && <span>(Edited)</span>}
 
-        {authUser.username === message.userId && (
-          <span>
-            {editMode ? (
+                  </div>
+                  <div className="feed-footer">
+                    <a href="#!" className="like">
+                      <MDBIcon icon="heart" />
+                      <span>7 likes</span>
+                      <span>
+           {editMode ? (
               <span>
-                <button onClick={this.onSaveEditText}>Save</button>
-                <button onClick={this.onToggleEditMode}>Reset</button>
+                   <br></br>
+                   <MDBIcon onClick={this.onSaveEditText} icon="check-circle" />
+                   <span> Save </span> 
+                   <br></br>
+                   <MDBIcon onClick={this.onToggleEditMode} icon="times-circle" />
+                   <span> Delete </span>
               </span>
             ) : (
-              <button onClick={this.onToggleEditMode}>Edit</button>
+               <MDBIcon onClick={this.onToggleEditMode} icon="edit" />
+              
             )}
 
             {!editMode && (
-              <button
-                type="button"
-                onClick={() => onRemoveMessage(message.username)}
-              >
-                Delete
-              </button>
+           
+              <MDBIcon onClick={() => onRemoveMessage(message.username)} icon="trash" />
+              
             )}
           </span>
-        )}
-      </li>
+                    </a>
+                  </div>
+                </div>
+                </div>
+                </li>
+                </MDBRow>
+
+                </MDBCardBody>
+                </MDBCard>
     );
   }
 }

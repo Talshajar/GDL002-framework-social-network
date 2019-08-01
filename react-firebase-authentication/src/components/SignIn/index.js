@@ -5,13 +5,17 @@ import { SignUpLink } from "../SignUp";
 import { PasswordForgetLink } from '../PasswordForget';
 import { withFirebase } from "../Firebase";
 import * as ROUTES from "../../constants/routes";
+import { SignUpPageStyle }  from '../SignUp/SignUpStyle';
+
 const SignInPage = () => (
-  <div>
+  <SignUpPageStyle>
+  <div >
     <h1>SignIn</h1>
     <SignInForm />
     <PasswordForgetLink />
     <SignUpLink />
   </div>
+  </SignUpPageStyle>
 );
 const INITIAL_STATE = {
   email: "",

@@ -1,18 +1,24 @@
-/* @import url('https://fonts.googleapis.com/css?family=Raleway:100,400');
+import styled from 'styled-components';
 
-html {
-  box-sizing: border-box;
+export const SignUpPageStyle = styled.div`
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,400');
+
+p {
+  color: #ad5389;
+  font-family: "Raleway", sans-serif;
+  font-weight: 100;
+  font-size:2em;
+  margin: .25em 0;
+  width: 100%;
+  line-height: 1.5em;
+  text-align: center;
 }
 
-body {
-  background: #ad5389; 
-  background: -webkit-linear-gradient(to right, #3c1053, #ad5389); 
-  background: linear-gradient(to right, #3c1053, #ad5389); 
-}  
 
 h1 {
   width: 60%;
-  color: #fff;
+  color: #ad5389;
   font-size: 5em;
   font-family: "Raleway", serif;
   font-weight: 100;
@@ -27,7 +33,7 @@ form * {
 
 input:focus {
 	outline: 0;
-  color: #fff;
+  color: #ad5389;
 }
 
 
@@ -53,14 +59,14 @@ form input {
   transition: color 1s;
 }
 :-ms-input-placeholder { 
-  color: #fff;
+  color: #ad5389;
 }
 ::-moz-placeholder { 
-  color: #fff;
+  color: #ad5389;
   opacity: 1;
 }
 :-moz-placeholder {
-  color: #fff;
+  color: #ad5389;
   opacity: 1;
 }
 
@@ -69,7 +75,7 @@ form input:focus {
 }
 
 input:focus::-webkit-input-placeholder {
-  color: #fff;
+  color: #ad5389;
 }
 
 #hidePassword {
@@ -86,8 +92,8 @@ button {
   width: 100%;
   margin: 1em 0 0 0;
   padding: .25em;
-  border: 1px solid rgba(255,255,255,.5);
-  color: rgba(255,255,255,.5);
+  border: 1px solid #ad5389;
+  color: #ad5389;
   font-family: "Raleway", sans-serif;
   font-weight: 100;
   font-size:2em;
@@ -96,8 +102,8 @@ button {
 
 button:focus {
   outline: 0;
-  border: 1px solid #fff;
-  color: #fff;
+  border: 1px solid #ad5389;
+  color: #ad5389;
 }
 
 form p {
@@ -118,7 +124,7 @@ form a {
 
 form a:focus {
   outline: none;
-  color: #fff;
+  color: #ad5389;
 }
 
 
@@ -141,4 +147,4 @@ form a:focus {
     width: 80%;
     font-size: .8em;
   }
-} */
+}`;

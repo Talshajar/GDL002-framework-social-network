@@ -2,13 +2,16 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
+import { SignUpPageStyle }  from '../SignUp/SignUpStyle';
 
 
 const PasswordForgetPage = () => (
+    <SignUpPageStyle>
     <div>
     <h1>PasswordForget</h1>
     <PasswordForgetForm />
     </div>
+    </SignUpPageStyle>
     );
 
     const INITIAL_STATE = {
@@ -16,7 +19,7 @@ const PasswordForgetPage = () => (
     error: null,
     };
 
-    
+
 class PasswordForgetFormBase extends Component {
 constructor(props) {
 super(props);
@@ -60,9 +63,11 @@ Reset My Password
 }
 }
 const PasswordForgetLink = () => (
+    <SignUpPageStyle>
 <p>
 <Link to={ROUTES.PASSWORD_FORGET}>Forgot Password?</Link>
 </p>
+</SignUpPageStyle>
 );
 export default PasswordForgetPage;
 const PasswordForgetForm = withFirebase(PasswordForgetFormBase);

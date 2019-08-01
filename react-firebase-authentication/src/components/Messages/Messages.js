@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import { AuthUserContext } from '../Session';
 import { withFirebase } from '../Firebase';
 import MessageList from './MessageList';
+import { SignUpPageStyle }  from '../SignUp/SignUpStyle'
+import { MDBCard, MDBCardBody, MDBRow, MDBIcon, MDBBtn } from 'mdbreact';
 
 class Messages extends Component {
   constructor(props) {
@@ -12,7 +14,7 @@ class Messages extends Component {
       text: '',
       loading: false,
       messages: [],
-      limit: 10,
+      limit: 3,
     };
   }
 
@@ -82,7 +84,7 @@ class Messages extends Component {
 
   onNextPage = () => {
     this.setState(
-      state => ({ limit: state.limit + 10 }),
+      state => ({ limit: state.limit + 3 }),
       this.onListenForMessages,
     );
   };
@@ -93,7 +95,8 @@ class Messages extends Component {
     return (
       <AuthUserContext.Consumer>
         {authUser => (
-          <div>
+        
+          <div className="container">
             {!loading && messages && (
               <button type="button" onClick={this.onNextPage}>
                 More
@@ -113,7 +116,17 @@ class Messages extends Component {
 
             {!messages && <div>There are no messages ...</div>}
 
-            <form
+     
+
+
+            <MDBCard
+      className="my-5 px-5 pt-4"
+      style={{ fontWeight: 300, maxWidth: 600 }}
+    >
+       <MDBCardBody className="py-0">
+  <MDBRow>
+
+<form
               onSubmit={event =>
                 this.onCreateMessage(event, authUser)
               }
@@ -122,10 +135,23 @@ class Messages extends Component {
                 type="text"
                 value={text}
                 onChange={this.onChangeText}
+                placeholder="What´s on your mind...?"
               />
-              <button type="submit">Send</button>
+                <MDBBtn type="submit" tag="a" size="lg" floating gradient="purple"> send </MDBBtn>
+               {/* <MDBBtn color="primary" rounded type="submit">Send</MDBBtn> */}
+              
             </form>
+            </MDBRow>
+            </MDBCardBody>
+            </MDBCard>
+
+
+
+
+
+
           </div>
+         
         )}
       </AuthUserContext.Consumer>
     );

@@ -4,7 +4,6 @@ import Messages from '../Messages';
 
 const HomePage = () => (
   <div>
-    <h1>Home Page</h1>
     <Messages />
   </div>
 );
